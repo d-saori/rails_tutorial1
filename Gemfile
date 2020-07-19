@@ -8,11 +8,11 @@ gem 'uglifier',     '3.2.0'
 gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
-gem 'jbuilder',     '2.6.4'
+gem 'jbuilder',     '2.7.0'
 
 # 後でHerokuで使うデータベースと競合する可能性を防ぐための、sqlite3 gemをdevelopment環境とtest環境だけで使う(production環境では使わない)ように変更
 group :development, :test do
-  gem 'sqlite3',      '1.3.13'
+  gem 'sqlite3', '1.3.13'
   gem 'byebug', '9.0.6', platform: :mri
 end
 
@@ -21,6 +21,10 @@ group :development do
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+end
+
+group :production do
+  gem 'pg', '0.20.0'
 end
 
 # git_source(:github) do |repo_name|
